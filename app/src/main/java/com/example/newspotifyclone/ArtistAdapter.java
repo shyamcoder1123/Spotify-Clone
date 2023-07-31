@@ -1,6 +1,7 @@
 package com.example.newspotifyclone;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,16 +37,24 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ArtistModel artistModel = artistModelArrayList.get(position);
-        holder.artistNameView.setText(artistModel.getArtistName());
-        Picasso.get().load(artistModel.getArtistImage())
-                .into(holder.artistImageView);
+//        Log.e("This is artist ",artistModelArrayList.get(0).getName());
+//        holder.artistNameView.setText(artistModelArrayList.get(0).getName());
+//        Picasso.get().load(artistModelArrayList.get(0).getImages().get(1).getUrl())
+//                .into(holder.artistImageView);
     }
 
     @Override
     public int getItemCount() {
-        return artistModelArrayList.size();
+        return 1;
     }
+
+//    @Override
+//    public void onBindViewHolder(@NonNull ViewHolder holder) {
+////        ArtistModel artistModel = artistModelArrayList.get(position);
+////        holder.artistNameView.setText(artistModel.getArtistName());
+////        Picasso.get().load(artistModel.getArtistImage())
+////                .into(holder.artistImageView);
+//    }
 
     public interface ArtistInterface{
         void onCategoryClick(int position);

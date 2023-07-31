@@ -44,7 +44,7 @@ public class SongItemRecyclerAdapter extends RecyclerView.Adapter<SongItemRecycl
         int artistLength = songModel.getArtistName().length();
         String artistString = artistLength<20?songModel.getArtistName()
                 :songModel.getArtistName().substring(0,10)+"...";
-        holder.songName.setText(songString);
+//        holder.songName.setText(songString);
         holder.artistName.setText(artistString);
 
         Picasso.get().load(songModel.getSongImage()).centerCrop().resize(150,150).into(holder.songImage);
@@ -61,12 +61,12 @@ public class SongItemRecyclerAdapter extends RecyclerView.Adapter<SongItemRecycl
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView songName;
+//        TextView songName;
         TextView artistName;
         ImageView songImage;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            songName = itemView.findViewById(R.id.songName);
+//            songName = itemView.findViewById(R.id.songName);
             artistName = itemView.findViewById(R.id.artistName);
             songImage=itemView.findViewById(R.id.songImage);
         }

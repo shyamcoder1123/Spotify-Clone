@@ -158,9 +158,10 @@
             android:layout_marginTop="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
-        <include layout="@layout/artist_card"/>
+        <include layout="@layout/artist_card"
+            android:id="@+id/first_artist"/>
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/songRecycler3"
+            android:id="@+id/songRecyclerArtist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -193,12 +194,12 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
         <!--        artist-->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/artistRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/artist_card"/>
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/artistRecyclerView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--            tools:listitem="@layout/artist_card"/>-->
 
         <!--        song-->
         <androidx.recyclerview.widget.RecyclerView

@@ -1,4 +1,4 @@
-package com.example.newspotifyclone;
+package com.example.newspotifyclone.model;
 
 import java.util.List;
 
@@ -25,6 +25,33 @@ class Track {
     private String name;
     private String id;
     // Add other properties as needed
+    private String artist;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    private String image;
 
     public String getName() {
         return name;
