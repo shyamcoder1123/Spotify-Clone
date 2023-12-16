@@ -2,18 +2,27 @@ package com.example.newspotifyclone;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.widget.Toast;
+import android.os.Handler;
+import android.util.Log;
+
+import com.example.newspotifyclone.service.SpotifyApiService;
+
+import java.util.concurrent.CountDownLatch;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import java.util.concurrent.CountDownLatch;
 
 public class TokenManager {
-    private static TokenManager instnce;
-    private static final  String CLIENT_ID = "f7c95f9bf6af41ab835da61507f8ba2f";
-    private static final  String CLIENT_SECRET = "f109a6b695564e4188ceb49647661581";
+    private static TokenManager instance;
+
+    private android.os.Handler handler = new Handler();
+    private Runnable runnable;
+    private static final  String CLIENT_ID = "YOUR_SPOTIFY_CLIENT_ID";
+    private static final  String CLIENT_SECRET = "YOUR_SPOTIFY_CLIENT_SECRET ";
 
     private static final String SHARED_PREF_NAME = "MY_SHARED_PREF";
     private static final String ACCESS_TOKEN_KEY = "ACCESS_TOKEN_KEY";
@@ -25,22 +34,28 @@ public class TokenManager {
     private TokenManager(Context context){
 
         this.sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME,context.MODE_PRIVATE);
+        accessToken=sharedPreferences.getString(ACCESS_TOKEN_KEY, null);
     }
     public static synchronized TokenManager getInstance(Context context){
-        if(instnce==null){
-            instnce = new TokenManager(context);
+        if(instance==null){
+            instance = new TokenManager(context);
         }
-        return instnce;
+        return instance;
     }
-    public String getAccessToken(){
-        if(accessToken==null || isAccessTokenExpired()){
-            getAccessTokenRetrofitRequest();
+
+    public void getAccessToken(TokenCallback callback) {
+        if (accessToken == null || isAccessTokenExpired()) {
+            getAccessTokenRetrofitRequest(callback);
+        }else {
+            callback.onTokenFetched(accessToken);
         }
-        return sharedPreferences.getString(ACCESS_TOKEN_KEY,null);
+
+//        return sharedPreferences.getString(ACCESS_TOKEN_KEY, null);
     }
+
     public void saveAccessToken(String accessToken) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(ACCESS_TOKEN_KEY,"Bearer "+accessToken);
+        editor.putString(ACCESS_TOKEN_KEY,accessToken);
         editor.apply();
     }
 
@@ -57,7 +72,7 @@ public class TokenManager {
         return Long.parseLong(apiRequestedTimeString);
     }
 
-    private void getAccessTokenRetrofitRequest(){
+    private void getAccessTokenRetrofitRequest(final TokenCallback callback){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://accounts.spotify.com/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
@@ -71,13 +86,14 @@ public class TokenManager {
                 if(response.isSuccessful()){
                     AccessTokenResponse accessTokenResponse = response.body();
                     if(accessTokenResponse!=null){
-                        String accessToken = accessTokenResponse.getAccessToken();
+                        accessToken = "Bearer "+accessTokenResponse.getAccessToken();
                         saveAccessToken(accessToken);
+
+                        callback.onTokenFetched(accessToken);
                     }
                     //do something
                 }
             }
-
             @Override
             public void onFailure(Call<AccessTokenResponse> call, Throwable t) {
 
@@ -92,4 +108,8 @@ public class TokenManager {
             return true;
         } else return apiRequestedTime == 0;
     }
+    public interface TokenCallback {
+        void onTokenFetched(String token);
+    }
+
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:width="10dp"
+        android:height="10dp"
+        android:drawable="@drawable/premium_card_background1"/>
+    <item android:width="5dp"
+        android:height="10dp"
+        android:left="10dp"
+        android:drawable="@drawable/gradient_for_login"/>
+    <item android:width="10dp"
+        android:height="5dp"
+        android:top="10dp"
+        android:drawable="@drawable/gradient_for_login"/>
+    <item android:width="5dp"
+        android:height="5dp"
+        android:top="10dp"
+        android:left="10dp"
+        android:drawable="@drawable/gradient_a_b_c"/>
+    <item android:width="2dp"
+        android:height="2dp"
+        android:drawable="@drawable/bi_camera"/>
+    <item android:width="3dp"
+        android:height="3dp"
+        android:left="10dp"
+        android:drawable="@drawable/like"/>
+    <item android:width="4dp"
+        android:height="4dp"
+        android:top="10dp"
+        android:drawable="@drawable/library"/>
+    <item android:width="10dp"
+        android:height="10dp"
+        android:drawable="@drawable/arrow_down_arrow_up"/>
+</layer-list>

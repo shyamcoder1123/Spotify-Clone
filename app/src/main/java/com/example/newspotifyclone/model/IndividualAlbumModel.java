@@ -53,6 +53,16 @@ public class IndividualAlbumModel implements Serializable{
 
     ArrayList<CopyRight> copyrights;
     String label;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    private String name;
     int total_tracks;
 
     public Tracks getTracks() {
@@ -63,7 +73,7 @@ public class IndividualAlbumModel implements Serializable{
         this.tracks = tracks;
     }
 
-    Tracks tracks;
+    private Tracks tracks;
     External_urls External_urlsObject;
     public External_urls getExternal_urls() {
         return External_urlsObject;
@@ -193,9 +203,11 @@ public class IndividualAlbumModel implements Serializable{
         public class TrackIndividual implements Serializable{
             ArrayList<Artist> artists;
             String href;
+            AlbumModel.Album album;
             long duration_ms;
             String id;
             String name;
+            String preview_url;
 
             public String getHref() {
                 return href;
@@ -207,6 +219,14 @@ public class IndividualAlbumModel implements Serializable{
 
             public ArrayList<Artist> getArtists() {
                 return artists;
+            }
+
+            public AlbumModel.Album getAlbum() {
+                return album;
+            }
+
+            public void setAlbum(AlbumModel.Album album) {
+                this.album = album;
             }
 
             public void setArtists(ArrayList<Artist> artists) {
@@ -244,8 +264,6 @@ public class IndividualAlbumModel implements Serializable{
             public void setPreview_url(String preview_url) {
                 this.preview_url = preview_url;
             }
-
-            String preview_url;
         }
     }
 

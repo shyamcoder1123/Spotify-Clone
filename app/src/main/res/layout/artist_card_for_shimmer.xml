@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="232dp"
+    android:layout_height="48dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="138dp"
+    android:layout_marginBottom="8dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey"
+        android:orientation="horizontal">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/artistImage"
+            android:layout_width="48dp"
+            android:layout_height="47.925dp"
+            android:layout_marginEnd="11dp"/>
+        <RelativeLayout
+            android:layout_width="173dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/moreLike"
+                android:layout_width="75dp"
+                android:layout_height="20dp"
+                android:text=""
+                android:fontFamily="@font/gotham_bold"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:layout_alignParentTop="true"/>
+            <TextView
+                android:id="@+id/artistName"
+                android:layout_width="130dp"
+                android:layout_height="20dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:text=""
+                android:fontFamily="@font/gotham_bold"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

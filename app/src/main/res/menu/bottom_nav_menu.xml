@@ -4,7 +4,7 @@
     <item
         android:id="@+id/home"
         android:title="Home"
-        android:icon="@drawable/home" />
+        android:icon="@drawable/home"/>
     <item android:id="@+id/search"
         android:icon="@drawable/search"
         android:title="Search"/>
@@ -14,4 +14,5 @@
     <item android:id="@+id/premium"
         android:icon="@drawable/spotify2"
         android:title="Premium"/>
+
 </menu>

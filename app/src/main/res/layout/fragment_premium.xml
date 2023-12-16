@@ -1,14 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PremiumFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.core.widget.NestedScrollView
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".view.PremiumFragment">
 
-</FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            tools:context=".view.PremiumFragment">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Get more out of your"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/gotham_bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="80dp"/>
+                <TextView
+                    android:id="@+id/secHead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="music with premium"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/gotham_bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="110dp"/>
+                <include layout="@layout/free_premium_card"
+                    android:id="@+id/freePremCardForViewPager"/>
+                <!--            <androidx.viewpager.widget.ViewPager-->
+                <!--                android:id="@+id/viewPagerForPrem"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--                app:layout_constraintRight_toRightOf="parent"-->
+                <!--                android:overScrollMode="never"-->
+                <!--                android:clipToPadding="false"-->
+                <!--                app:layout_constraintTop_toBottomOf="@+id/secHead"/>-->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardViewGetPremium"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/freePremCardForViewPager"
+                    android:layout_marginTop="25dp"
+                    app:cardCornerRadius="30dp">
+                    <TextView
+                        android:id="@+id/getPremiumTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GET PREMIUM"
+                        android:fontFamily="@font/gotham_bold"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:backgroundTint="@color/white"
+                        />
+                </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:id="@+id/termsAndCondition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Terms and conditions apply"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/gotham_bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardViewGetPremium"/>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/currentPlanInfo"
+                    android:layout_width="300dp"
+                    android:layout_height="70dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/termsAndCondition"
+                    android:layout_marginTop="25dp"
+                    app:cardCornerRadius="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#515151"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gotham_bold"
+                            android:textColor="@color/white"
+                            android:text="Spotify Free"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:textSize="14sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gotham_bold"
+                            android:textColor="#A6A5A5"
+                            android:text="CURRENT PLAN"
+                            android:textSize="10sp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="70dp"/>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:id="@+id/pickYourPremiumText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pick your Premium"
+                    android:textColor="@color/white"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/currentPlanInfo"
+                    android:layout_marginTop="30dp"
+                    android:paddingLeft="20dp"/>
+                <include layout="@layout/premium_card"
+                    android:layout_width="350dp"
+                    android:id="@+id/firstCard"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pickYourPremiumText"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"/>
+                <include layout="@layout/premium_card"
+                    android:layout_width="350dp"
+                    android:id="@+id/secondCard"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/firstCard"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"/>
+                <include layout="@layout/premium_card"
+                    android:layout_width="350dp"
+                    android:id="@+id/thirdCard"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/secondCard"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

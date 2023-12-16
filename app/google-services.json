@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "443560685776",
+    "project_id": "my-spotify-37d41",
+    "storage_bucket": "my-spotify-37d41.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443560685776:android:50aa1fb736302251f66ed5",
+        "android_client_info": {
+          "package_name": "com.example.newspotifyclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443560685776-26lkhl3jhufd2t0o4lnv4jtk1h0pd1ho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6dZJqo0HBsmtPIeAJ2yR4Zds4DikDCI8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443560685776-26lkhl3jhufd2t0o4lnv4jtk1h0pd1ho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/gradient_e_f"/>
+    <item android:drawable="@drawable/white_circle_background"
+        android:width="10dp"
+        android:height="10dp"/>
+    <item android:drawable="@drawable/black_circle_background"
+        android:width="1dp"
+        android:height="1dp"
+        android:left="1.5dp"
+        android:top="3dp"/>
+    <item android:drawable="@drawable/black_circle_background"
+        android:width="1dp"
+        android:height="1dp"
+        android:left="7.5dp"
+        android:top="3dp"/>
+    <item android:drawable="@drawable/line"
+        android:width="1dp"
+        android:height="2dp"
+        android:left="4.5dp"
+        android:top="5dp"/>
+    <item android:drawable="@drawable/stroke_black_circle"
+        android:width="2dp"
+        android:left="4.5dp"
+        android:top="4dp"/>
+</layer-list>

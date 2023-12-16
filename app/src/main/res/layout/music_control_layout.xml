@@ -18,6 +18,7 @@
             android:id="@+id/seekBar"
             android:layout_width="match_parent"
             android:layout_height="24dp"
+            android:progressTint="#1FDF64"
             app:layout_constraintTop_toBottomOf="@+id/music_player_song_details"
             android:layout_marginTop="3dp"
             android:thumb="@drawable/seekbar_thumb"/>
